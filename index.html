@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AIM-8 Sonic Studio — AI Music Creation</title>
+  <meta name="description"
+    content="AI-powered music creation studio. Generate songs, separate stems, master tracks, and create music videos with artificial intelligence.">
+  <meta name="keywords"
+    content="AI music, AI beat generator, music creation, stem separation, AI mastering, generative music, make a song with AI, AI video generation for music, AI music mastering, text to music generator, AI stem separation" />
+  <meta name="author" content="AIM-8 Sonic Studio" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0f172a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="AIM-8">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AIM-8 Sonic Studio — AI Music Creation">
+  <meta property="og:description"
+    content="Generate songs, stems, and music videos with AI. Create professional music in seconds.">
+  <meta property="og:image" content="/og-card.png">
+  <meta property="og:site_name" content="AIM-8 Sonic Studio">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AIM-8 Sonic Studio — AI Music Creation">
+  <meta name="twitter:description" content="Generate songs, stems, and music videos with AI.">
+  <meta name="twitter:image" content="/og-card.png">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "AIM-8 Sonic Studio",
+    
+    "description": "AI-powered music creation studio. Generate songs, separate stems, master tracks, and create music videos with artificial intelligence.",
+    "applicationCategory": "MultimediaApplication",
+    "applicationSubCategory": "MusicApplication",
+    "operatingSystem": "Web Browser",
+    "featureList": [
+      "AI Music Generation from Text Prompts",
+      "AI Video Generation",
+      "AI Audio Mastering",
+      "Stem Separation (Vocals, Drums, Bass, Melody)",
+      "Live Voice Studio with 40+ Languages",
+      "Local library stored in your browser",
+      "TikTok & Social Media Export"
+    ]
+  }
+  </script>
+
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="/logo-icon.png">
+  <link rel="icon" type="image/png" href="/logo-icon.png">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://unpkg.com/intro.js/minified/introjs.min.css">
+  <style>
+    /* Custom scrollbar for webkit */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    @keyframes wave {
+
+      0%,
+      100% {
+        height: 10%;
+      }
+
+      50% {
+        height: 100%;
+      }
+    }
+
+    .animate-wave {
+      animation: wave 1s ease-in-out infinite;
+    }
+
+    /* IntroJS Customization */
+    .introjs-tooltip {
+      background-color: #0f172a !important;
+      /* slate-900 */
+      color: white !important;
+      border: 1px solid rgba(255, 255, 255, 0.1) !important;
+      border-radius: 12px !important;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+    }
+
+    .introjs-arrow.top {
+      border-bottom-color: #0f172a !important;
+    }
+
+    .introjs-arrow.bottom {
+      border-top-color: #0f172a !important;
+    }
+
+    .introjs-arrow.right {
+      border-left-color: #0f172a !important;
+    }
+
+    .introjs-arrow.left {
+      border-right-color: #0f172a !important;
+    }
+
+    .introjs-button {
+      background: #0891b2 !important;
+      /* cyan-600 */
+      border: none !important;
+      text-shadow: none !important;
+      color: white !important;
+      border-radius: 6px !important;
+      font-family: inherit !important;
+      font-size: 12px !important;
+      padding: 6px 12px !important;
+    }
+
+    .introjs-button:hover {
+      background: #06b6d4 !important;
+      /* cyan-500 */
+    }
+
+    .introjs-skipbutton {
+      color: #94a3b8 !important;
+      /* slate-400 */
+    }
+
+    .introjs-bullets ul li a {
+      background: #334155 !important;
+    }
+
+    .introjs-bullets ul li a.active {
+      background: #22d3ee !important;
+    }
+
+    .introjs-helperLayer {
+      background-color: rgba(15, 23, 42, 0.5) !important;
+      border: 1px solid rgba(34, 211, 238, 0.3);
+    }
+  </style>
+  <script src="https://unpkg.com/intro.js/minified/intro.min.js"></script>
+  <link rel="stylesheet" href="/index.css">
+</head>
+
+<body class="bg-slate-950 text-slate-50 overflow-hidden">
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(reg => console.log('SW registered:', reg.scope))
+          .catch(err => console.warn('SW registration failed:', err));
+      });
+    }
+  </script>
+</body>
+
+</html>

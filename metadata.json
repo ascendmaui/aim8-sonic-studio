@@ -1,0 +1,7 @@
+{
+  "name": "Aim8",
+  "description": "A voice-powered AI music creation studio powered by Gemini and Suno.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
