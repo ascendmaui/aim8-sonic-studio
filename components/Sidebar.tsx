@@ -146,26 +146,6 @@ const Sidebar: React.FC<SidebarProps> = ({
                     ))}
                 </div>
 
-                <div className="border-t border-white/5 pt-3">
-                    {!collapsed && (
-                        <p className="text-[9px] font-bold text-slate-700 uppercase tracking-widest mb-2 px-3">
-                            Account
-                        </p>
-                    )}
-                    {collapsed && <div className="w-6 h-px bg-white/5 mx-auto mb-2" />}
-
-                    {onOpenFeedback && (
-                        <NavItem
-                            icon={HeartHandshake}
-                            label="Give Feedback"
-                            active={false}
-                            onClick={() => { onOpenFeedback(); setMobileOpen(false); }}
-                            collapsed={collapsed}
-                            accent="from-rose-500/15 to-pink-500/10"
-                        />
-                    )}
-                </div>
-
                 {/* Chat History */}
                 {!collapsed && chatSessions.length > 0 && (
                     <div className="border-t border-white/5 pt-3 mt-2">
